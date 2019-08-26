@@ -1,0 +1,29 @@
+.view-header {
+  position: relative;
+  width: 100%;
+  order: 1;
+}
+header{
+  position: sticky;
+  nav{
+    .navigation-menu{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      li{
+        display: flex;
+        align-items: center;
+        margin: 0 10px ;
+        border: 2px solid black;
+        height: 100%;
+        padding: 10px;
+       a{
+        display: flex;
+         text-decoration: none;
+         text-transform: uppercase;
+       }
+      }
+    }
+  }
+}
+

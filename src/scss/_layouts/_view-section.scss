@@ -1,0 +1,14 @@
+.view-section {
+  position: relative;
+  width: 100%;
+  order: 2;
+  flex-grow: 1;
+}
+.one-block{
+  height: 100vh;
+  background-color: rgb(38, 198, 218);;
+}
+.block-two{
+  height: 100vh;
+  background-color: aqua;
+}
