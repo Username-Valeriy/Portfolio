@@ -72,6 +72,7 @@ const router = new VueRouter({
 });
 
 window.onload = function () {
+
     OverlayScrollbars(document.body, {
         scrollbars : {
             autoHide:'m',

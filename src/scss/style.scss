@@ -5,6 +5,7 @@ INCLUDE ALL SASS FILES
 
 // CONFIGS
 @import "config"; // include default and main variables
+@import "_functions/animation"; // animation
 
 // PRELOADER
 @import "_parts/preloader";

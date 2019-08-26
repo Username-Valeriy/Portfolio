@@ -4,24 +4,37 @@
             <nav>
                 <ul class="navigation-menu">
                     <li>
-                        <a href="#Home" >Home</a>
+                        <a href="#Home" >Home
+                        </a>
+                        <span class="left-top"></span>
+                        <span class="right-bottom"></span>
                     </li>
                     <li>
-                        <a href="#portfolio" v-smooth-scroll="{ duration: 1000 }"> portfolio</a>
+                        <a href="#portfolio" @click="toelements"> portfolio
+                        </a>
+                        <span class="left-top"></span>
+                        <span class="right-bottom"></span>
                     </li>
                     <li>
-                        <a href="#skills" v-smooth-scroll="{ duration: 1000 }">skills</a>
+                        <a href="#skills" >skills
+                        </a>
+                        <span class="left-top"></span>
+                        <span class="right-bottom"></span>
                     </li>
                     <li>
-                        <a href="#contacts" v-smooth-scroll="{ duration: 1000 }"> contacts</a>
+                        <a href="#contacts" v-smooth-scroll="{ duration: 1000 }"> contacts
+                        </a>
+                        <span class="left-top"></span>
+                        <span class="right-bottom"></span>
                     </li>
                     <li>
-                    <el-select v-model="value" placeholder="Select">
+                    <el-select v-model="value" placeholder="Ru">
                         <el-option
                                 v-for="item in optionsLanguage"
                                 :key="item.value"
                                 :label="item.label"
-                                :value="item.value">
+                                :value="item.value"
+                                :disabled="item.disabled">
                         </el-option>
                     </el-select>
                     </li>
@@ -36,29 +49,27 @@
         name: "Header",
         data() {
             return {
-                body_scrollbar: null,
+
                 optionsLanguage: [{
-                    value: 'Option1',
-                    label: 'Option1'
+                    value: 'Ru',
+                    label: 'Ru',
                 }, {
-                    value: 'Option2',
-                    label: 'Option2'
+                    value: 'En',
+                    label: 'En',
+                    disabled: true
                 }, {
-                    value: 'Option3',
-                    label: 'Option3'
-                }, {
-                    value: 'Option4',
-                    label: 'Option4'
-                }, {
-                    value: 'Option5',
-                    label: 'Option5'
+                    value: 'Fr',
+                    label: 'Fr',
                 }],
-                value: ''
+                value: '',
             }
         },
         methods:{
+            toelements(el){
+                this.scroll({ el : el, scroll :{ x : "never" }, block : "start", margin : 0 },5000);
+            },
             scrollToEl(el){
-                this.body_scrollbar.scroll({ el : el, scroll :{ x : "never" }, block : "start", margin : 0 },5000);
+                this.scroll({ el : el, scroll :{ x : "never" }, block : "start", margin : 0 },5000);
             },
             scrollToTop(){
                 this.body_scrollbar.scroll({y:0},1000);
