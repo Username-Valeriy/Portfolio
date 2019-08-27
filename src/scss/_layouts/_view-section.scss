@@ -5,8 +5,8 @@
   flex-grow: 1;
 }
 .one-block{
-  height: 100vh;
-  background-color: rgb(38, 198, 218);;
+  height: calc(100vh - 60px);
+  //background-color: rgb(38, 198, 218);
 }
 .block-two{
   height: 100vh;

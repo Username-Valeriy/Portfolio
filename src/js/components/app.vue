@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Home @scrolltoel="scrolltoel" />
+        <Home @scrolltoel="scrolltoel" @setlang="setlang"/>
     </div>
 </template>
 
@@ -10,6 +10,9 @@ export default {
     methods:{
         scrolltoel(el){
             this.$emit('scrolltoel', el)
+        },
+        setlang(lang){
+            this.$emit('setlang', lang)
         }
     }
 }

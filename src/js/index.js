@@ -2,7 +2,9 @@ import Vue from 'vue';
 
 import ElementUI from 'element-ui';
 import VueRouter from 'vue-router';
-import vueSmoothScroll from 'vue2-smooth-scroll';
+import Vuex from 'vuex';
+
+
 
 import App from './components/app.vue';
 import Home from './components/pages/home.vue';
@@ -29,10 +31,10 @@ Vue.component('Footer', Footer);
  * использование компонетов
  */
 Vue.use(VueRouter);
+Vue.use(Vuex);
 Vue.use(Swiper);
 Vue.use(overlayscrollbars);
 Vue.use(ElementUI);
-Vue.use(vueSmoothScroll)
 
 /**
  * вызов компонентов
@@ -42,7 +44,21 @@ new Vue({
     el: '#app',
     data() {
         return {
-            body_scroll: null
+            body_scroll: null,
+            languages: {
+                'ru': [
+                    {
+                        'link_follow' : 'Перейти по ссылке'
+                    }
+                ],
+                'fr': [],
+                'en': [
+                    {
+                        'link_follow': 'Link Follow'
+                    }
+                ]
+            },
+            currentLanguage:'ru'
         }
     },
     components: {
@@ -63,6 +79,9 @@ new Vue({
             let id = el.href.split('#').pop(),
                 targetElement = document.getElementById(id);
             this.body_scroll.scroll({el: targetElement, scroll: {x: "never"}, block: "start", margin: 60}, 1000);
+        },
+        setlang(lang){
+            this.currentLanguage = lang
         }
     },
     mounted() {

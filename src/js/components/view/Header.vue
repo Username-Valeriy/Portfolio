@@ -4,14 +4,15 @@
             <nav>
                 <ul class="navigation-menu">
                     <li>
-                        <a href="#Home" >Home
-                        </a>
+                        <a href="#Home" >Home</a>
                         <span class="left-top"></span>
                         <span class="right-bottom"></span>
                     </li>
                     <li>
                         <a href="#portfolio" ref="portfolio"  @click.prevent="scrollToEl"> portfolio
                         </a>
+                        <span class="left-top"></span>
+                        <span class="right-bottom"></span>
                     </li>
                     <li>
                         <a href="#skills" >skills
@@ -26,7 +27,7 @@
                         <span class="right-bottom"></span>
                     </li>
                     <li>
-                    <el-select v-model="value" placeholder="Ru">
+                    <el-select v-model="value" @change="changeCurrentLang" placeholder="Ru">
                         <el-option
                                 v-for="item in optionsLanguage"
                                 :key="item.value"
@@ -47,26 +48,28 @@
         name: "Header",
         data() {
             return {
-
                 optionsLanguage: [{
-                    value: 'Ru',
+                    value: 'ru',
                     label: 'Ru',
                 }, {
-                    value: 'En',
+                    value: 'en',
                     label: 'En',
-                    disabled: true
                 }, {
-                    value: 'Fr',
+                    value: 'fr',
                     label: 'Fr',
+                    disabled: true
                 }],
                 value: '',
             }
         },
         methods:{
             scrollToEl(){
-
                 this.$emit('scrolltoel', this.$refs.portfolio)
             },
+            changeCurrentLang(key)
+            {
+                this.$emit('setlang', key)
+            }
         },
     }
 </script>
