@@ -21,7 +21,7 @@
                         <span class="right-bottom"></span>
                     </li>
                     <li>
-                        <a href="#contacts" v-smooth-scroll="{ duration: 1000 }"> contacts
+                        <a href="#contacts"> contacts
                         </a>
                         <span class="left-top"></span>
                         <span class="right-bottom"></span>
