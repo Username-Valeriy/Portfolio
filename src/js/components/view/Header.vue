@@ -4,7 +4,7 @@
             <nav>
                 <ul class="navigation-menu">
                     <li>
-                        <a href="#Home" >Home</a>
+                        <a  href="#Home" > {{homeText.home}}  </a>
                         <span class="left-top"></span>
                         <span class="right-bottom"></span>
                     </li>
@@ -66,11 +66,16 @@
             scrollToEl(){
                 this.$emit('scrolltoel', this.$refs.portfolio)
             },
-            changeCurrentLang(key)
-            {
-                this.$emit('setlang', key)
-            }
+            changeCurrentLang(key){
+                     this.$store.commit('changeCurrentLang', key);
+            },
+
         },
+        computed: {
+            homeText () {
+                return this.$store.getters.doneTranslations
+            }
+        }
     }
 </script>
 

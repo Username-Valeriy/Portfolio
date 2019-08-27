@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header v-on:scrolltoel="scrolltoel" @setlang="setlang"/>
+        <Header v-on:scrolltoel="scrolltoel" />
         <HomeSectionOne/>
         <HomeSectionTwo/>
         <Footer/>
@@ -15,9 +15,6 @@
         methods:{
             scrolltoel(el){
                 this.$emit('scrolltoel', el)
-            },
-            setlang(lang){
-                this.$emit('setlang', lang)
             }
         }
     }
