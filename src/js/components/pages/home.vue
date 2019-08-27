@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header/>
+        <Header v-on:scrolltoel="scrolltoel"/>
         <HomeSectionOne/>
         <HomeSectionTwo/>
         <Footer/>
@@ -11,6 +11,11 @@
 
 <script>
     export default {
-        name: 'Home'
+        name: 'Home',
+        methods:{
+            scrolltoel(el){
+                this.$emit('scrolltoel', el)
+            }
+        }
     }
 </script>

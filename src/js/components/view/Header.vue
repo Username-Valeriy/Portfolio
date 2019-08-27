@@ -10,10 +10,8 @@
                         <span class="right-bottom"></span>
                     </li>
                     <li>
-                        <a href="#portfolio" @click="toelements"> portfolio
+                        <a href="#portfolio" ref="portfolio"  @click.prevent="scrollToEl"> portfolio
                         </a>
-                        <span class="left-top"></span>
-                        <span class="right-bottom"></span>
                     </li>
                     <li>
                         <a href="#skills" >skills
@@ -65,15 +63,10 @@
             }
         },
         methods:{
-            toelements(el){
-                this.scroll({ el : el, scroll :{ x : "never" }, block : "start", margin : 0 },5000);
+            scrollToEl(){
+
+                this.$emit('scrolltoel', this.$refs.portfolio)
             },
-            scrollToEl(el){
-                this.scroll({ el : el, scroll :{ x : "never" }, block : "start", margin : 0 },5000);
-            },
-            scrollToTop(){
-                this.body_scrollbar.scroll({y:0},1000);
-            }
         },
     }
 </script>

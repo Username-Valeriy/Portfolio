@@ -12,12 +12,8 @@ import HomeSectionTwo from "./components/home_component/HomeSectionTwo.vue";
 import Footer from "./components/view/Footer.vue";
 
 
-
 import Swiper from 'vue-awesome-swiper'
-import overlayscrollbars  from 'overlayscrollbars'
-
-
-
+import overlayscrollbars from 'overlayscrollbars'
 
 
 /**
@@ -43,9 +39,34 @@ Vue.use(vueSmoothScroll)
  */
 
 new Vue({
-    el: 'app',
+    el: '#app',
+    data() {
+        return {
+            body_scroll: null
+        }
+    },
     components: {
         App,
+    },
+    methods: {
+        initScrollBar() {
+            this.body_scroll = OverlayScrollbars(document.body, {
+                scrollbars: {
+                    autoHide: 'm',
+                },
+                overflowBehavior: {
+                    x: "hidden"
+                }
+            });
+        },
+        scrolltoel(el) {
+            let id = el.href.split('#').pop(),
+                targetElement = document.getElementById(id);
+            this.body_scroll.scroll({el: targetElement, scroll: {x: "never"}, block: "start", margin: 60}, 1000);
+        }
+    },
+    mounted() {
+        this.initScrollBar()
     }
 });
 
@@ -60,25 +81,9 @@ const router = new VueRouter({
         },
         // {path: "*", component: PageNotFound}
     ],
-    data:{
-
-    },
-    method:{
-
-    },
+    data: {},
+    method: {},
     mounted() {
 
     },
 });
-
-window.onload = function () {
-
-    OverlayScrollbars(document.body, {
-        scrollbars : {
-            autoHide:'m',
-        },
-        overflowBehavior : {
-            x : "hidden"
-        }
-    });
-};

@@ -1,12 +1,16 @@
 <template>
     <div>
-        <Home>
-        </Home>
+        <Home @scrolltoel="scrolltoel" />
     </div>
 </template>
 
 <script>
 export default {
-    name: 'App'
+    name: 'App',
+    methods:{
+        scrolltoel(el){
+            this.$emit('scrolltoel', el)
+        }
+    }
 }
 </script>
