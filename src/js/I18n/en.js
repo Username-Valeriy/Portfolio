@@ -1,5 +1,6 @@
 const en = {
-    'en':'ин'
+    'en':'ин',
+    'home':'home'
 };
 
 export default en
