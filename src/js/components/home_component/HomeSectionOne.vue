@@ -1,5 +1,5 @@
 <template>
-    <section class="one-block" id="home">
+    <section class="one-block" id="section_1">
         section one
     </section>
 </template>

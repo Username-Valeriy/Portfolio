@@ -4,6 +4,10 @@ import ElementUI from 'element-ui';
 import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 
+import VueObserveVisibility from 'vue-observe-visibility'
+
+
+
 import App from './components/app.vue';
 import Home from './components/pages/home.vue';
 import Header from "./components/view/Header.vue";
@@ -41,6 +45,7 @@ Vue.use(Vuex);
 Vue.use(Swiper);
 Vue.use(overlayscrollbars);
 Vue.use(ElementUI);
+Vue.use(VueObserveVisibility)
 
 /**
  * вызов компонентов
@@ -93,16 +98,16 @@ new Vue({
         App,
     },
     methods: {
-        initScrollBar() {
-            this.body_scroll = OverlayScrollbars(document.body, {
-                scrollbars: {
-                    autoHide: 'm',
-                },
-                overflowBehavior: {
-                    x: "hidden"
-                }
-            });
-        },
+        // initScrollBar() {
+        //     this.body_scroll = OverlayScrollbars(document.body, {
+        //         scrollbars: {
+        //             autoHide: 'm',
+        //         },
+        //         overflowBehavior: {
+        //             x: "hidden"
+        //         }
+        //     });
+        // },
         scrolltoel(el) {
             let id = el.href.split('#').pop(),
                 targetElement = document.getElementById(id);
