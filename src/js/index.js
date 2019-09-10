@@ -98,16 +98,16 @@ new Vue({
         App,
     },
     methods: {
-        // initScrollBar() {
-        //     this.body_scroll = OverlayScrollbars(document.body, {
-        //         scrollbars: {
-        //             autoHide: 'm',
-        //         },
-        //         overflowBehavior: {
-        //             x: "hidden"
-        //         }
-        //     });
-        // },
+        initScrollBar() {
+            this.body_scroll = OverlayScrollbars(document.body, {
+                scrollbars: {
+                    autoHide: 'm',
+                },
+                overflowBehavior: {
+                    x: "hidden"
+                }
+            });
+        },
         scrolltoel(el) {
             let id = el.href.split('#').pop(),
                 targetElement = document.getElementById(id);

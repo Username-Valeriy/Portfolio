@@ -20,12 +20,13 @@ header{
         margin: 0 10px ;
         border: 2px solid black;
         height: 100%;
-
         position: relative;
         transition: all .3s ease-out;
+
         &:last-child{
         a{
           padding: 0;
+
         }
         }
         &:hover{

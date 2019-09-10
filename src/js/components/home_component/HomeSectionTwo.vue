@@ -1,5 +1,5 @@
 <template>
-    <section class="block-two" id="section_2">
+    <section class="block-two" id="portfolio">
         <template>
             <swiper :options="swiperOption" ref="mySwiper">
                 <!-- slides -->

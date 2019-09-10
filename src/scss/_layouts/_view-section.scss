@@ -4,11 +4,15 @@
   order: 2;
   flex-grow: 1;
 }
-.one-block{
+.banner-section{
   height: calc(100vh - 60px);
-  //background-color: rgb(38, 198, 218);
+  background-image: url("../../img/banner-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:contain ;
+  background-color: #e7e7e7 ;
 }
-.block-two{
+#portfolio{
   height: 100vh;
   background-color: aqua;
 }
